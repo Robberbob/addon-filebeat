@@ -4,5 +4,5 @@
 # Runs the filebeat daemon
 # ==============================================================================
 bashio::log.info "Starting filebeat..."
-exec find /share && find /var/log
+exec find /var
 #exec filebeat -c /etc/filebeat/filebeat.yml
