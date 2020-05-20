@@ -6,6 +6,8 @@ filebeat.inputs:
 - type: log
   paths:
     - /var/log/logfile
+    - /config/home-assistant.log
+    - /share/hassio/homeassistant/homeassistant.log
 output.logstash:
    hosts: ["192.168.2.75:5044"]
 path:
