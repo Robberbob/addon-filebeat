@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN apt update \
+RUN apt-get update \
   && apt-get install -y curl \
   && curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.8.9-amd64.deb \
   && dpkg -i filebeat-6.8.9-amd64.deb \
