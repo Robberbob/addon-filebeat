@@ -4,5 +4,5 @@
 # Runs the filebeat daemon
 # ==============================================================================
 bashio::log.info "Starting filebeat..."
-
-exec filebeat -c /etc/filebeat/filebeat.yml
+exec ls /share/hassio/homeassistant/ && tail -f /share/hassio/homeassistant/homeassistant.log
+#exec filebeat -c /etc/filebeat/filebeat.yml

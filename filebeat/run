@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bashio
-# ==============================================================================
-# Home Assistant Community Add-on: Filebeat
-# Runs the filebeat daemon
-# ==============================================================================
-bashio::log.info "Starting filebeat..."
-
-exec filebeat -c /etc/filebeat/filebeat.yml
