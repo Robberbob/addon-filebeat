@@ -10,7 +10,24 @@ RUN apt update \
   && dpkg -i filebeat-6.8.9-amd64.deb \
   && apt install -y filebeat-oss
 
-COPY filebeat.yml /etc/filebeat/filebeat.yml
-USER root
-RUN chown root:filebeat /etc/filebeat/filebeat.yml
-USER filebeat
+COPY rootfs /
+
+# Labels
+LABEL \
+    io.hass.name="Filebeat" \
+    io.hass.description="Filebeat add-on by Robert" \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="Robert Lech <robertdlech@gmail.com>" \
+    org.opencontainers.image.title="Filebeat" \
+    org.opencontainers.image.description="Filebeat add-on by Robert" \
+    org.opencontainers.image.vendor="Robert" \
+    org.opencontainers.image.authors="Robert Lech <robertdlech@gmail.com>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.source="https://github.com/Robberbob/addon-filebeat" \
+    org.opencontainers.image.documentation="https://github.com/Robberbob/addon-filebeat/blob/master/README.md" \
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
