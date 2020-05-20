@@ -11,6 +11,6 @@
   "hassio_role": "default",
   "boot": "auto",
   "options": {},
-  "map": ["config", "share", "ssl"],
+  "map": ["config", "share", "addons"],
   "schema": {}
 }
