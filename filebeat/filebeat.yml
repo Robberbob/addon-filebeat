@@ -1,0 +1,13 @@
+# Needed for Graylog
+fields_under_root: true
+fields.collector_node_id: has.io
+
+filebeat.inputs:
+- type: log
+  paths:
+    - /var/log/logfile
+output.logstash:
+   hosts: ["192.168.2.75:5044"]
+path:
+  data: /var/lib/graylog-sidecar/collectors/filebeat/data
+  logs: /var/lib/graylog-sidecar/collectors/filebeat/log
